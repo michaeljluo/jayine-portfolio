@@ -5,35 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>About Me</title>
+    <title>NYU Welcome 2023</title>
   </head>
   <body>
     <header>
-      <a href="home.html"><img class="logo" src="titles/jayine-nguyen.svg" alt="logo"></a>
+      <a href="home.html"><img class="zoom logo" src="titles/jayine-nguyen.svg" alt="logo"></a>
+      <div class="menuToggle"></div>
       <nav>
         <ul>
           <li><a href="home.html">Home</a></li>
+          <li><a href="jayine-resume.pdf" target="_blank">Resume</a></li>
           <li><a href="about-me.html">About Me</a></li>
-          <li>
-            <a href="">My Work</a>
+          <li><a href="">My Work &nbsp;<i class="fa-solid fa-caret-down"></i></a>
               <ul class="dropdown">
                 <li><a href="design.html">Design</a></li>
                 <li><a href="hand-lettering.html">Hand Lettering</a></li>
                 <li><a href="art.html">Art</a></li>
-            </ul>
+              </ul>
           </li>
-          <li><a href="https://drive.google.com/file/d/1IaleXo9WZd5P_qs9-MQ2wqOsoendcBpz/view?usp=sharing" target="_blank">Resume</a></li>
-        </ul>
       </nav>
     </header>
 
-    <div class="about-grid">
-      <div class="about-div1"><img src="titles/hello.svg" alt="hello!" class="hello"></div>
-      <div class="about-div2">
+    <div id="about-grid">
+      <div id="about-div1"><img src="titles/hello.svg" alt="hello!" class="hello"></div>
+
+      <div id="about-div2"><img id="headshot" src="blobs/picture-blob.svg" alt="a picture of jayine nguyen"></div>
+      <div id="about-div3">
         <p>I'm Jayine. I was born in Ho Chi Minh City, Vietnam; raised in Vietnam and Houston, Texas; and currently living in New York City to pursue my B.S. in Integrated Design and Media at New York University.</p>
-        <p>Growing up in Vietnam, I hated calligraphy because fountain pens made me have a huge writer's callus and the ink was very difficult to control. But I soon discover my love for calligraphy when I realized how beautiful it can be in 8th grade. However, after finding out that not a lot of my friends in America can read calligraphy, I tailored my handwriting to make it more readable but still have a lot of personality. Now, I have a growing passion for typography and I aspire to be a graphic designer.</p>
+        <br>
+        <p>Growing up in Vietnam, I hated calligraphy because fountain pens made me have a huge writer's callus and the ink was very difficult to control. But I discovered my love for calligraphy when I realized how beautiful it can be in 8th grade (character development!). However, after finding out that not a lot of my friends in America can read calligraphy, I tailored my handwriting to make it more readable but still have a lot of personality. Now, I have a growing passion for typography and I aspire to be a graphic designer.</p>
       </div>
-      <div class="about-div3"><img src="blobs/picture-blob.svg" alt="a picture of jayine nguyen" class="headshot"></div>
     </div>
 
     <footer>
@@ -48,8 +49,17 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy;2023 Jayine Nguyen</p>
+        <p>Copyright &copy; 2023 Jayine Nguyen. All rights reserved.</p>
       </div>
     </footer>
+
+    <script>
+      let menuToggle = document.querySelector('.menuToggle');
+      let header = document.querySelector('header');
+      menuToggle.onclick = function(){
+        header.classList.toggle('active');
+      }
+    </script>
+
   </body>
 </html>

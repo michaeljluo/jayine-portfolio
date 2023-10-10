@@ -7,66 +7,76 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* header */
-li, a {
-  font-size: 16px;
-  text-decoration: none;
+body {
+  overflow-x: hidden; /* hide horizontal scrollbar */
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px 10%;
-}
-
+/* header - start*/
 .logo {
-  object-fit: fill;
+  display: flex;
   width: 75%;
   cursor: pointer;
 }
 
-ul li {
-  display: inline-block;
-  position: relative; /*display the header correctly*/
-  padding: 0px 0px 0px 40px;
-  white-space: nowrap;
-}
-
-ul li a {
-  display: block;
-  color: #A2D2FF; /*light blue*/
-}
-
-ul li ul.dropdown {
+header {
   width: 100%;
-  padding-top: 10px;
-  padding-bottom: 5px;
-  position: absolute; /* this will make sure "My Work" doesn't move when showing dropdrown menu*/
-  z-index: 999;
-  display: none;
-}
-ul li ul.dropdown li {
-  display: block;
-  padding: 5px 0px 5px 0px;
+  min-height: 66px;
+  padding: 40px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-ul li a:hover {
-  color: #0080FF; /*dark blue*/
+header ul {
+  position: relative;
+}
+
+header ul li {
+  position: relative;
+  list-style: none;
+  float: left;
+}
+
+header ul li a {
+  color: #A2D2FF; /* light blue */
+  padding: 10px 25px;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+header ul li a:hover {
+  color: #0080FF; /* dark blue */
   transition: 0.4s;
 }
 
-ul li:hover ul.dropdown {
+header ul li ul {
+  position: absolute;
+  left: 0;
+  width: 200px;
+  background: #FFF; /* white */
+  display: none;
+}
+
+header ul li:hover ul{
   display: block;
 }
 
-/* header */
+header ul li ul li {
+  position: relative;
+  width: 100%;
+}
 
-/* footer */
+.fa-solid, .fas {
+  align-self: center;
+}
+/* header - end */
+
+/* footer - start */
 footer {
   margin-top: 50px;
-  background-color: rgba(252, 225, 228, 0.4); /*light pink*/
-  color: #A2D2FF; /*light blue*/
+  background-color: rgba(252, 225, 228, 0.4); /* light pink */
+  color: #A2D2FF; /* light blue */
 }
 
 .footer-container {
@@ -88,7 +98,7 @@ footer {
 }
 
 .social-icons a i {
-  color: #A2D2FF; /*light blue*/
+  color: #A2D2FF; /* light blue */
 }
 
 /* hover effect on social media icons */
@@ -105,25 +115,32 @@ footer {
 
 .footer-bottom p {
   color: #A2D2FF;
+  font-size: 12px;
 }
-/* footer */
+/* footer - end */
 
 
-/* HOME PAGE */
+/* HOME - start */
 
 /*  grid layout */
-.img-grid {
+#home-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-rows: 0.4fr 0.5fr 0.6fr 0.5fr 0.5fr;
+  grid-template-areas:
+    "purple purple . blue blue"
+    "purple purple . blue blue"
+    ". jayine jayine jayine ."
+    "yellow yellow . pink pink "
+    "yellow yellow . pink pink ";
   padding-bottom: 50px;
 }
 
-.img-div1 { grid-area: 1 / 1 / 3 / 3; }
-.img-div2 { grid-area: 1 / 4 / 3 / 6; }
-.img-div3 { grid-area: 3 / 2 / 4 / 5; }
-.img-div4 { grid-area: 4 / 1 / 6 / 3; }
-.img-div5 { grid-area: 4 / 4 / 6 / 6; }
+.home-div1 { grid-area: purple; }
+.home-div2 { grid-area: blue; }
+.home-div3 { grid-area: jayine; }
+.home-div4 { grid-area: yellow; }
+.home-div5 { grid-area: pink; }
 
 /* for the blob images */
 .blob-left {
@@ -138,128 +155,547 @@ footer {
 }
 
 /* for the "jayine nguyen" image */
-.jayine {
+.jayine-home {
   object-fit: cover;
   width: 100%;
 }
 
-/* HOME PAGE */
+.jayine-home p {
+  font-size: 19px;
+  text-align: center;
+  background-image: linear-gradient(45deg, #FFAFCC, #A2D2FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.zoom {
+  transition: transform .5s ease; /* animation */
+}
+
+.zoom:hover {
+  transform: scale(1.2);
+  display: inline;
+}
+
+/* HOME - end */
 
 
+/* ABOUT ME - start */
 
-
-/* ABOUT ME PAGE */
-
-.about-grid {
+#about-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.3fr 1fr;
+  grid-template-areas:
+    "hello hello headshot"
+    "bio bio headshot";
   padding: 40px 10%;
 }
 
-.about-div1 {
-  grid-area: 1 / 1 / 3 / 4;
-  object-fit: cover;
-  width: 55%;
+#about-div1 {
+  grid-area: hello;
+  width: 50%;
 }
 
-.hello {
-  align-self: center;
-  object-fit: cover;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-.about-div2 {
-  grid-area: 3 / 1 / 6 / 4;
-}
-
-.about-div2 p {
-  margin-bottom: 30px;
-  color: #A2D2FF; /*light blue*/
-}
-
-.about-div3 {
-  grid-area: 1 / 4 / 6 / 6;
-  object-fit: cover;
-  width: 90%;
-  justify-self: end;
+#about-div2 {
+  grid-area: headshot;
   align-self: center;
 }
 
-.headshot {
-  object-fit: cover;
+#headshot {
   width: 100%;
 }
 
-/* ABOUT ME PAGE */
-
-/* MY WORK PAGE*/
-
-.title {
-  padding: 40px 10%;
+#about-div3 {
+  grid-area: bio;
+  width: 90%;
+  margin-bottom: 30px;
+  color: #A2D2FF; /* light blue */
 }
 
-.design, .hand-lettering, .art {
+/* ABOUT ME - end */
+
+
+/* MY WORK - start */
+
+.page-title > img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height: 120px;
+  width: 100%;
+  object-fit: cover;
 }
 
-.work-grid {
-  --gap: 70px;
-  --num-cols: 3;
-
-  line-height: 160px;
-  padding: 40px 10%;
-
-  -webkit-column-count: var(--num-cols);
-  -webkit-column-gap: var(--gap);
-  -moz-column-count: var(--num-cols);
-  -moz-column-gap: var(--gap);
-  column-count: var(--num-cols);
-  column-gap: var(--gap);
+.three-columns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 70px 70px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
-.work-grid > img {
+.three-columns-grid > img {
   width: 100%;
   height: auto;
 }
 
-/* MY WORK - DESIGN PAGE*/
+/* DESIGN - start */
+.overlay-container {
+  position: relative;
+  margin-bottom: 70px;
+}
+
+.overlay-image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5 ease;
+  backface-visibility: hidden;
+}
+
+.overlay-effect {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.overlay-container:hover .overlay-image {
+  opacity: 0.3;
+}
+
+.overlay-container:hover .overlay-effect {
+  opacity: 1;
+}
+
+.overlay-text {
+  width: 100%;
+  height: 100%;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* DESIGN - end */
+
+/* ART - start */
+
+#art-gallery {
+  column-count: 3;
+  column-gap: 70px;
+  line-height: 140px;
+  padding-top: 40px;
+}
+
+#art-gallery > img {
+  width: 100%;
+}
+
+/* ART - end */
+
+/* MY WORK - end */
 
 
+/* INDIVIDUAL WORK - start */
 
-/* for phone */
-@media (max-width: 700px){
-  .blob-left {
+.two-columns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 70px 70px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.two-columns-grid > img {
+  width: 100%;
+  height: auto;
+}
+
+.body-div {
+  padding: 40px 10%;
+}
+
+.information {
+  padding-top: 40px;
+}
+
+.information > .three-columns-grid {
+  padding-top: 0; /*remove the padding from .three-columns-grid for this specific page */
+}
+
+.section-title {
+  display: block;
+  padding-top: 70px;
+  /* padding-bottom: 40; */
+}
+
+.banner {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 70px;
+  place-items: center;
+}
+
+.banner > img {
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2.section-title {
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+
+h3 {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+p {
+  line-height: 35px;
+}
+
+hr {
+  border-top: 3px solid #A2D2FF; /*light blue*/
+  width: 20%;
+}
+
+h4 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  padding-bottom: 8px;
+}
+
+/* NYU Welcome 2023 - start */
+
+#nyu-welcome-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+    "description logo";
+  grid-gap: 70px;
+  align-items: center;
+}
+
+#nyu-welcome-description {
+  grid-area: description;
+}
+
+.logo-title-grid {
+  grid-area: logo;
+  display: grid;
+  grid-template-rows: 0fr 0fr;
+  place-items: center;
+}
+
+.logo-title-grid > img {
+  object-fit: cover;
+  width: 60%;
+  padding-bottom: 8px;
+}
+
+.logo-title-grid > h3 {
+  text-align: center;
+}
+
+/* NYU Welcome 2023 - end */
+
+/* Elysium Cat Cafe - start */
+
+#elysium-two-cols-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "solid-icon outline-icon";
+  grid-gap: 70px;
+  align-items: center;
+}
+
+#img-two-grid > img {
+  width: 100%;
+  height: auto;
+}
+
+#solid-icon {
+  grid-area: solid-icon;
+}
+
+#outline-icon {
+  grid-area: outline-icon;
+}
+
+#elysium-three-cols-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "wireframes hifi-proto mockup";
+  align-items: center;
+}
+
+#wireframes {
+  grid-area: wireframes;
+}
+
+#hifi-proto {
+  grid-area: hifi-proto;
+}
+
+#mockup {
+  grid-area: mockup;
+}
+
+.stage-grid {
+  grid-area: logo;
+  display: grid;
+  grid-template-rows: 0fr 0fr;
+  place-items: center;
+}
+
+.stage-grid > img {
+  object-fit: cover;
+  width: 95%;
+  padding-bottom: 8px;
+}
+
+/* Elysium Cat Cafe - end */
+
+/* 3D Modeling - start */
+
+#yotsuba-inspo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 0fr);
+  grid-template-areas:
+    "manga-cover fanmade"
+    "manga-cover black-white";
+  grid-column-gap: 70px;
+  grid-row-gap: 70px;
+}
+
+#cover {
+  grid-area: manga-cover;
+}
+
+#fanmade {
+  grid-area: fanmade;
+}
+
+#black-white {
+  grid-area: black-white;
+}
+
+#cover > img, #fanmade > img, #black-white > img {
+  object-fit: cover;
+  width: 100%;
+}
+
+/* 3D Modeling - end */
+
+/* INDIVIDUAL WORK PAGES */
+
+/* medium-sized screens */
+@media only screen and (max-width: 1200px) {
+
+  /* header - start */
+  header {
+    padding: 40px 10%;
+  }
+
+   header nav {
+    position: absolute;
     width: 100%;
+    top: 110px;
+    left: 0;
+    background: #FFF; /* white */
+    display: none;
+    z-index: 1
   }
 
-  .blob-right {
+  header.active nav {
+    display: initial;
+  }
+
+  header nav ul li {
+    width: 100%
+  }
+
+  header ul li a {
+    padding: 10px 10% 10px 10%;
+    justify-content: normal;
+  }
+
+  header nav ul li ul {
+    position: relative;
     width: 100%;
+    left: 0;
   }
 
-  footer {
-    margin-top: 20px;
+  header ul li ul li {
+    top: 0;
+    left: 0;
   }
 
-  .footer-container {
-    padding-top: 25px;
+  header nav li:hover ul li {
+    background: #FFF; /* white */
   }
 
-  .social-icons a {
-    font-size: 14px;
+  .menuToggle {
+    position: relative;;
+    width: 40px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .footer-bottom p {
+  .menuToggle::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #A2D2FF; /* light blue */
+    border-radius: 3px;
+    transform: translateY(-12px);
+    box-shadow: 0 12px #A2D2FF; /* light blue */
+  }
+
+  .menuToggle::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #A2D2FF; /* light blue */
+    border-radius: 3px;
+    transform: translateY(12px);
+  }
+
+  header.active .menuToggle::before {
+    transform: rotate(45deg);
+    box-shadow: 0 0 #000;
+  }
+
+  header.active .menuToggle::after {
+    transform:rotate(315deg);
+  }
+
+  /* header - end */
+
+  .logo-title-grid > img {
+    width: 70%;
+  }
+
+  #home-grid {
+    grid-template-rows: 0.5fr 0.5fr 0fr 0.5fr 0.5fr;
+  }
+
+  #about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.3fr;
+    grid-template-rows: 0.4fr 1fr;
+    grid-template-areas:
+      "hello hello headshot"
+      "bio bio headshot";
+    padding: 40px 10%;
+  }
+
+  #about-div1 {
+    width: 65%;
+  }
+
+  #about-div3 p {
+    font-size: 11px;
+    line-height: 25px;
+  }
+
+  #art-gallery {
+    column-count: 2;
+  }
+
+  #nyu-welcome-grid {
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-areas:
+    "description logo";
+  }
+
+}
+
+/* grid on small screens */
+@media only screen and (max-width: 767px) and (min-width: 300px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 12px;
+    line-height: 25px;
+  }
+
+  .two-columns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .logo-title-grid > img {
+    width: 50%;
+  }
+
+  #art-gallery {
+    column-count: 1;
+  }
+
+  #home-grid {
+    grid-template-rows: 0.5fr 0.5fr 1fr 0.5fr 0.5fr;
+  }
+
+  .jayine-home p {
     font-size: 10px;
   }
 
-  .footer-bottom {
-    padding-bottom: 25px;
+  #about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0fr 0fr 0fr;
+    grid-template-areas:
+      "hello"
+      "headshot"
+      "bio";
+    padding: 40px 10%;
   }
+
+  #about-div1 {
+    width: 90%;
+    justify-self: center;
+  }
+
+  #about-div2 {
+    width: 80%;
+    justify-self: center;
+  }
+
+  #about-div3 {
+    width: 100%;
+  }
+
+  #nyu-welcome-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0fr 0fr;
+    grid-template-areas:
+      "logo"
+      "description";
+    grid-gap: 50px;
+  }
+
 }

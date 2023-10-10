@@ -5,46 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>My Work - Design</title>
+    <title>NYU Welcome 2023</title>
   </head>
   <body>
     <header>
-      <a href="home.html"><img class="logo" src="titles/jayine-nguyen.svg" alt="logo"></a>
+      <a href="home.html"><img class="zoom logo" src="titles/jayine-nguyen.svg" alt="logo"></a>
+      <div class="menuToggle"></div>
       <nav>
         <ul>
           <li><a href="home.html">Home</a></li>
+          <li><a href="jayine-resume.pdf" target="_blank">Resume</a></li>
           <li><a href="about-me.html">About Me</a></li>
-          <li>
-            <a href="">My Work</a>
+          <li><a href="">My Work &nbsp;<i class="fa-solid fa-caret-down"></i></a>
               <ul class="dropdown">
                 <li><a href="design.html">Design</a></li>
                 <li><a href="hand-lettering.html">Hand Lettering</a></li>
                 <li><a href="art.html">Art</a></li>
-            </ul>
+              </ul>
           </li>
-          <li><a href="https://drive.google.com/file/d/1IaleXo9WZd5P_qs9-MQ2wqOsoendcBpz/view?usp=sharing" target="_blank">Resume</a></li>
-        </ul>
       </nav>
     </header>
 
-    <div class="title">
-      <img src="titles/design.svg" alt="Design" class="design">
+    <div class="body-div">
+      <div class="page-title">
+        <img src="titles/design.svg" alt="Design">
+      </div>
 
-    </div>
+      <div class="three-columns-grid">
 
-    <div class="work-grid">
-      <img src="design/design-1.png" alt="Minh Gala: Retro Sai Gon">
-      <img src="design/design-2.png" alt="Summer Roll Making"">
-      <img src="design/design-3.png" alt="Elysium: Cat Cafe Logo">
-      <img src="design/design-4.png" alt="Elysium: Cat Cafe Mobile App Design">
-      <img src="design/design-5.png" alt="Xuan Night Market">
-      <img src="design/design-6.png" alt="NYU VSA Logo">
-      <img src="design/design-7.png" alt="IDM Logo">
-      <img src="design/design-8.png" alt="36th Street - Sunset Park: We Stand Together">
-      <img src="design/design-9.png" alt="Tien Len Tournament">
-      <img src="design/design-10.png" alt="NYU Welcome 2023 Logo">
-      <img src="design/design-11.png" alt="3D Modeling Project 1: Yotsuba Koiwai's Living Room">
-      <img src="design/design-12.png" alt="3D Modeling Project 2: Polly Pocket Heart">
+        <div class="overlay-container">
+          <a href="nyu-vsa.html">
+            <img class="overlay-image" src="design/design-5.png">
+              <div class="overlay-effect">
+                <div class="overlay-text">NYU VSA</div>
+              </div>
+          </a>
+        </div>
+
+        <div class="overlay-container">
+          <a href="nyu-welcome-23.html">
+            <img class="overlay-image" src="design/design-6.png">
+              <div class="overlay-effect">
+                <div class="overlay-text">NYU Welcome 2023</div>
+              </div>
+          </a>
+        </div>
+
+        <div class="overlay-container">
+          <a href="3d-modeling.html">
+            <img class="overlay-image" src="design/design-4.png">
+              <div class="overlay-effect">
+                <div class="overlay-text">3D Modeling</div>
+              </div>
+          </a>
+        </div>
+
+        <div class="overlay-container">
+          <a href="elysium-cat-cafe.html">
+            <img class="overlay-image" src="design/design-2.png">
+              <div class="overlay-effect">
+                <div class="overlay-text">Elysium Cat Cafe</div>
+              </div>
+          </a>
+        </div>
+
+        <div class="overlay-container">
+          <a href="idm-logo.html">
+            <img class="overlay-image" src="design/design-1.png">
+              <div class="overlay-effect">
+                <div class="overlay-text">IDM Logo</div>
+              </div>
+          </a>
+        </div>
+
+      </div>
     </div>
 
 
@@ -58,10 +92,18 @@
           <a href="mailto:jayine.nguyen@nyu.edu" target="_blank"><i class="fa-regular fa-envelope"></i></a>
         </div>
       </div>
-
       <div class="footer-bottom">
-        <p>&copy;2023 Jayine Nguyen</p>
+        <p>Copyright &copy; 2023 Jayine Nguyen. All rights reserved.</p>
       </div>
     </footer>
-  <body>
+
+    <script>
+      let menuToggle = document.querySelector('.menuToggle');
+      let header = document.querySelector('header');
+      menuToggle.onclick = function(){
+        header.classList.toggle('active');
+      }
+    </script>
+
+  </body>
 </html>
