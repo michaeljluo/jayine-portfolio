@@ -14,6 +14,7 @@ body {
 /* header - start*/
 .logo {
   display: flex;
+  display: -webkit-flex;
   width: 75%;
   cursor: pointer;
 }
@@ -23,12 +24,11 @@ header {
   min-height: 66px;
   padding: 40px 10%;
   display: flex;
+   display: -webkit-flex;
   justify-content: space-between;
+  -webkit-justify-content: space-between;
   align-items: center;
-}
-
-header ul {
-  position: relative;
+  -webkit-align-items: center;
 }
 
 header ul li {
@@ -42,7 +42,9 @@ header ul li a {
   padding: 10px 25px;
   text-decoration: none;
   display: flex;
+  display: -webkit-flex;
   justify-content: space-between;
+  -webkit-justify-content: space-between;
 }
 
 header ul li a:hover {
@@ -74,7 +76,7 @@ header ul li ul li {
 
 /* footer - start */
 footer {
-  margin-top: 50px;
+  margin-top: 4vw;
   background-color: rgba(252, 225, 228, 0.4); /* light pink */
   color: #A2D2FF; /* light blue */
 }
@@ -228,8 +230,8 @@ footer {
 
 .three-columns-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 70px 70px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5vw 5vw;
   padding-top: 40px;
   padding-bottom: 40px;
 }
@@ -242,7 +244,6 @@ footer {
 /* DESIGN - start */
 .overlay-container {
   position: relative;
-  margin-bottom: 70px;
 }
 
 .overlay-image {
@@ -288,8 +289,8 @@ footer {
 
 #art-gallery {
   column-count: 3;
-  column-gap: 70px;
-  line-height: 140px;
+  column-gap: 5vw;
+  line-height: 10vw;
   padding-top: 40px;
 }
 
@@ -306,10 +307,10 @@ footer {
 
 .two-columns-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(2, 1fr));
   grid-gap: 70px 70px;
   padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 3vw;
 }
 
 .two-columns-grid > img {
@@ -319,6 +320,7 @@ footer {
 
 .body-div {
   padding: 40px 10%;
+  padding-bottom: 3vw;
 }
 
 .information {
@@ -332,7 +334,6 @@ footer {
 .section-title {
   display: block;
   padding-top: 70px;
-  /* padding-bottom: 40; */
 }
 
 .banner {
@@ -506,12 +507,9 @@ h4 {
 /* INDIVIDUAL WORK PAGES */
 
 /* medium-sized screens */
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1100px) {
 
   /* header - start */
-  header {
-    padding: 40px 10%;
-  }
 
    header nav {
     position: absolute;
@@ -557,8 +555,12 @@ h4 {
     height: 50px;
     cursor: pointer;
     display: flex;
+    display: -webkit-flex;
     justify-content: center;
+    -webkit-justify-content: center;
     align-items: center;
+    -webkit-align-items: center;
+    z-index: 2;
   }
 
   .menuToggle::before {
@@ -592,6 +594,10 @@ h4 {
   }
 
   /* header - end */
+  .three-columns-grid { /* change to two columns in smaller screen */
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2vw 2vw;
+  }
 
   .logo-title-grid > img {
     width: 70%;
@@ -604,7 +610,7 @@ h4 {
   #about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1.3fr;
-    grid-template-rows: 0.4fr 1fr;
+    grid-template-rows: 0fr 0fr;
     grid-template-areas:
       "hello hello headshot"
       "bio bio headshot";
@@ -622,6 +628,8 @@ h4 {
 
   #art-gallery {
     column-count: 2;
+    column-gap: 2vw;
+    line-height: 8vw;
   }
 
   #nyu-welcome-grid {
@@ -633,7 +641,7 @@ h4 {
 }
 
 /* grid on small screens */
-@media only screen and (max-width: 767px) and (min-width: 300px) {
+@media only screen and (max-width: 767px) {
   h1 {
     font-size: 30px;
   }
@@ -650,10 +658,6 @@ h4 {
 
   .logo-title-grid > img {
     width: 50%;
-  }
-
-  #art-gallery {
-    column-count: 1;
   }
 
   #home-grid {
